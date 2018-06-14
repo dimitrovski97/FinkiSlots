@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,9 +39,14 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btnPlay = new System.Windows.Forms.Button();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.PictureBox();
             this.txtLastWin = new System.Windows.Forms.TextBox();
             this.numLines = new System.Windows.Forms.NumericUpDown();
+            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.numBet = new System.Windows.Forms.NumericUpDown();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,8 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBet)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -156,17 +163,17 @@
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox10
+            // btnExit
             // 
-            this.pictureBox10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pictureBox10.Image = global::FinkiSlots.Properties.Resources.btnExit;
-            this.pictureBox10.Location = new System.Drawing.Point(860, 0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 10;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            this.btnExit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnExit.Image = global::FinkiSlots.Properties.Resources.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(860, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExit.TabIndex = 10;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // txtLastWin
             // 
@@ -194,12 +201,73 @@
             this.numLines.Name = "numLines";
             this.numLines.Size = new System.Drawing.Size(120, 20);
             this.numLines.TabIndex = 12;
+            this.numLines.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numLines.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numLines.ValueChanged += new System.EventHandler(this.numLines_ValueChanged);
+            // 
+            // txtBalance
+            // 
+            this.txtBalance.Enabled = false;
+            this.txtBalance.Location = new System.Drawing.Point(130, 423);
+            this.txtBalance.Name = "txtBalance";
+            this.txtBalance.Size = new System.Drawing.Size(124, 20);
+            this.txtBalance.TabIndex = 13;
+            this.txtBalance.Text = "0";
+            this.txtBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numBet
+            // 
+            this.numBet.Location = new System.Drawing.Point(293, 423);
+            this.numBet.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numBet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBet.Name = "numBet";
+            this.numBet.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.numBet.Size = new System.Drawing.Size(120, 20);
+            this.numBet.TabIndex = 14;
+            this.numBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBet.ValueChanged += new System.EventHandler(this.numBet_ValueChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 70;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackgroundImage = global::FinkiSlots.Properties.Resources.coins_icon;
+            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsert.Location = new System.Drawing.Point(813, 112);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(64, 62);
+            this.btnInsert.TabIndex = 15;
+            this.btnInsert.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::FinkiSlots.Properties.Resources.cash_icon;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(813, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 62);
+            this.button1.TabIndex = 16;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // GamePlay
             // 
@@ -209,9 +277,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 467);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.numBet);
+            this.Controls.Add(this.txtBalance);
             this.Controls.Add(this.numLines);
             this.Controls.Add(this.txtLastWin);
-            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox9);
@@ -225,6 +297,9 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(884, 467);
+            this.MinimumSize = new System.Drawing.Size(884, 467);
             this.Name = "GamePlay";
             this.Text = "GamePlay";
             this.Load += new System.EventHandler(this.GamePlay_Load);
@@ -237,8 +312,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,8 +332,13 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Button btnPlay;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.TextBox txtLastWin;
         private System.Windows.Forms.NumericUpDown numLines;
+        private System.Windows.Forms.TextBox txtBalance;
+        private System.Windows.Forms.NumericUpDown numBet;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button button1;
     }
 }

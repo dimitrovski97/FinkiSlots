@@ -16,18 +16,26 @@ namespace FinkiSlots
         private int[] imagePositions { get; set; }
         private int spines { get; set; }
         private int lines { get; set; }
-        private int linesWin { get; set; }
         private int lastWin { get; set; }
+        private int coefficient { get; set; }
+        private int balance { get; set; }
+        private int bet { get; set; }
+        private int timerCounter { get; set; }
+
         public GamePlay()
         {
             InitializeComponent();
             imageList = new List<Image>();
             spines = 0;
             imagePositions = new int[9];
-            linesWin = 0;
             lastWin = 0;
             lines = Convert.ToInt32(numLines.Value);
-            
+            coefficient = 1;
+            balance = 1000;
+            txtBalance.Text = balance.ToString();
+            bet = Convert.ToInt32(numBet.Value);
+            timerCounter = 10;
+
         }
 
         private void GamePlay_Load(object sender, EventArgs e)
@@ -58,18 +66,11 @@ namespace FinkiSlots
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (spines >= 7)
-            {
-                spin(1);
-                spines++;
-                checkWin();
+            if (!spinAllowed())
                 return;
-            }
-            if (spines >= 13)
-                spines = 0;
-            spin();
-            spines++;
-            checkWin();
+            timerCounter = 10;
+            timer1.Start();        
+
         }
         private void spin(int chance = 0)
         {
@@ -116,89 +117,238 @@ namespace FinkiSlots
         }
         private void checkWin()
         {
-            if(lines==1)
+            
+            if (lines==1)
                 if(imagePositions[0]==imagePositions[4] && imagePositions[0]==imagePositions[8])
                     {
-                        linesWin++;
-                    }
+                        calculateCoefficient(imagePositions[0]);
+                        DrawLines(1);
+                }
             if (lines == 2)
             {
                 if (imagePositions[0] == imagePositions[4] && imagePositions[0] == imagePositions[8])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[0]);
+                    DrawLines(1);
                 }
                 if (imagePositions[1] == imagePositions[4] && imagePositions[1] == imagePositions[7])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[1]);
+                    DrawLines(2);
                 }
             }
             if (lines == 3)
             {
                 if (imagePositions[0] == imagePositions[4] && imagePositions[0] == imagePositions[8])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[0]);
+                    DrawLines(1);
                 }
                 if (imagePositions[1] == imagePositions[4] && imagePositions[1] == imagePositions[7])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[1]);
+                    DrawLines(2);
                 }
                 if (imagePositions[2] == imagePositions[4] && imagePositions[2] == imagePositions[6])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[2]);
+                    DrawLines(3);
                 }
             }
             if (lines == 4)
             {
                 if (imagePositions[0] == imagePositions[4] && imagePositions[0] == imagePositions[8])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[0]);
+                    DrawLines(1);
                 }
                 if (imagePositions[1] == imagePositions[4] && imagePositions[1] == imagePositions[7])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[1]);
+                    DrawLines(2);
                 }
                 if (imagePositions[2] == imagePositions[4] && imagePositions[2] == imagePositions[6])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[2]);
+                    DrawLines(3);
                 }
                 if (imagePositions[0] == imagePositions[3] && imagePositions[0] == imagePositions[6])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[0]);
+                    DrawLines(4);
                 }
             }
             if (lines == 5)
             {
                 if (imagePositions[0] == imagePositions[4] && imagePositions[0] == imagePositions[8])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[0]);
+                    DrawLines(1);
                 }
                 if (imagePositions[1] == imagePositions[4] && imagePositions[1] == imagePositions[7])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[1]);
+                    DrawLines(2);
                 }
                 if (imagePositions[2] == imagePositions[4] && imagePositions[2] == imagePositions[6])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[2]);
+                    DrawLines(3);
                 }
                 if (imagePositions[0] == imagePositions[3] && imagePositions[0] == imagePositions[6])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[0]);
+                    DrawLines(4);
                 }
                 if (imagePositions[2] == imagePositions[5] && imagePositions[2] == imagePositions[8])
                 {
-                    linesWin++;
+                    calculateCoefficient(imagePositions[2]);
+                    DrawLines(5);
                 }
             }
-            lastWin = linesWin * 3;
+            updateLastWin();
+            updateBalance();
+        }
+        public void DrawLines(int combination)
+        {
+            Graphics graphics = this.CreateGraphics();
+            if (combination == 1)
+            {
+                Point startPoint = new Point();
+                Point endPoint = new Point();
+                startPoint.X = pictureBox1.Location.X + pictureBox1.Width / 3;
+                startPoint.Y = pictureBox1.Location.Y + pictureBox1.Height / 2;
+                endPoint.X = pictureBox7.Location.X + pictureBox7.Width / 3 * 2;
+                endPoint.Y = pictureBox7.Location.Y + pictureBox7.Height / 2;
+                Pen p = new Pen(Color.Red);
+                p.Width = 10;
+                graphics.DrawLine(p, startPoint, endPoint);
+                graphics.Dispose();
+                p.Dispose();
+            }
+            if (combination == 2)
+            {
+                Point startPoint = new Point();
+                Point endPoint = new Point();
+                startPoint.X = pictureBox2.Location.X + pictureBox2.Width / 3;
+                startPoint.Y = pictureBox2.Location.Y + pictureBox2.Height / 2;
+                endPoint.X = pictureBox8.Location.X + pictureBox8.Width / 3 * 2;
+                endPoint.Y = pictureBox8.Location.Y + pictureBox8.Height / 2;
+                Pen p = new Pen(Color.Red);
+                p.Width = 10;
+                graphics.DrawLine(p, startPoint, endPoint);
+                graphics.Dispose();
+                p.Dispose();
+            }
+            if (combination == 3)
+            {
+                Point startPoint = new Point();
+                Point endPoint = new Point();
+                startPoint.X = pictureBox3.Location.X + pictureBox3.Width / 3;
+                startPoint.Y = pictureBox3.Location.Y + pictureBox3.Height / 2;
+                endPoint.X = pictureBox9.Location.X + pictureBox9.Width / 3 * 2;
+                endPoint.Y = pictureBox9.Location.Y + pictureBox9.Height / 2;
+                Pen p = new Pen(Color.Red);
+                p.Width = 10;
+                graphics.DrawLine(p, startPoint, endPoint);
+                graphics.Dispose();
+                p.Dispose();
+            }
+            if (combination == 4)
+            {
+                Point startPoint = new Point();
+                Point endPoint = new Point();
+                startPoint.X = pictureBox3.Location.X + pictureBox3.Width / 3;
+                startPoint.Y = pictureBox3.Location.Y + pictureBox3.Height / 2;
+                endPoint.X = pictureBox7.Location.X + pictureBox7.Width / 3 * 2;
+                endPoint.Y = pictureBox7.Location.Y + pictureBox7.Height / 2;
+                Pen p = new Pen(Color.Red);
+                p.Width = 10;
+                graphics.DrawLine(p, startPoint, endPoint);
+                graphics.Dispose();
+                p.Dispose();
+            }
+            if (combination == 5)
+            {
+                Point startPoint = new Point();
+                Point endPoint = new Point();
+                startPoint.X = pictureBox3.Location.X + pictureBox3.Width / 3;
+                startPoint.Y = pictureBox3.Location.Y + pictureBox3.Height / 2;
+                endPoint.X = pictureBox7.Location.X + pictureBox7.Width / 3 * 2;
+                endPoint.Y = pictureBox7.Location.Y + pictureBox7.Height / 2;
+                Pen p = new Pen(Color.Red);
+                p.Width = 10;
+                graphics.DrawLine(p, startPoint, endPoint);
+                graphics.Dispose();
+                p.Dispose();
+            }
+        }
+        private void calculateCoefficient(int subject)
+        {
+            if (subject == 0 || subject == 1)
+                coefficient = coefficient * 3;
+            if (subject == 2 || subject == 3 || subject == 7)
+                coefficient = coefficient * 4;
+            if (subject == 4 || subject == 5 || subject == 8)
+                coefficient = coefficient * 5;
+            if (subject == 6 )
+                coefficient = coefficient * 6;
+        }
+        private bool spinAllowed()
+        {
+            if (balance < bet * lines)
+                return false;
+            return true;
+        }
+        private void updateLastWin()
+        {
+            lastWin = bet * coefficient;
+            if (lastWin == bet)
+            {
+                lastWin = 0;
+            }
             txtLastWin.Text = lastWin.ToString();
-            linesWin = 0;
-            
+            coefficient = 1;
+        }
+        private void updateBalance()
+        {
+            balance = (balance - bet * lines) + lastWin;
+            txtBalance.Text = balance.ToString();
+            if (balance != 0)
+                numBet.Maximum = balance;
         }
 
         private void numLines_ValueChanged(object sender, EventArgs e)
         {
             lines = Convert.ToInt32(numLines.Value);
 
+        }
+
+        private void numBet_ValueChanged(object sender, EventArgs e)
+        {
+            bet = Convert.ToInt32(numBet.Value);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            spin();
+            timerCounter--;
+            if (timerCounter == 0)
+            {
+                timer1.Stop();
+                if (spines >= 7)
+                {
+                    spin(1);
+                    spines++;
+                    checkWin();
+                    return;
+                }
+                if (spines >= 13)
+                    spines = 0;
+                spin();
+                spines++;
+                checkWin();
+            }
         }
     }
 }
