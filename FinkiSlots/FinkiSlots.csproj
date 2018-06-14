@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A4C42C2-FC02-45D4-B113-2829859DAC96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FinkiSlots</RootNamespace>
+    <AssemblyName>FinkiSlots</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FinkiSlots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinkiSlots.Designer.cs">
+      <DependentUpon>FinkiSlots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GamePlay.Designer.cs">
+      <DependentUpon>GamePlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules.Designer.cs">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FinkiSlots.resx">
+      <DependentUpon>FinkiSlots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GamePlay.resx">
+      <DependentUpon>GamePlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules.resx">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\background_main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\btnPlay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\btnRules.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\btnJackpot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\btnExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\background_rules.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\paytable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\finki_background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\finkiSample.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\algoritmi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\diskretna.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\kalkulus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\napredno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\objektno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\strukturno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\verojatnost.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\vestacka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\SlotImages\vizuelno.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
