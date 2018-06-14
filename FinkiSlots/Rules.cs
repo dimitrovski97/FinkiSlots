@@ -26,5 +26,13 @@ namespace FinkiSlots
         {
             this.Close();
         }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            GamePlay newGame = new GamePlay();
+            this.Hide();
+            newGame.ShowDialog(this);
+            newGame.Dispose();
+        }
     }
 }

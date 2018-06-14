@@ -28,59 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPlay = new System.Windows.Forms.PictureBox();
-            this.btnRules = new System.Windows.Forms.PictureBox();
-            this.btnJackpot = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRules)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnJackpot)).BeginInit();
+            this.btnPlay = new System.Windows.Forms.Button();
+            this.btnRules = new System.Windows.Forms.Button();
+            this.btnJackpot = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnPlay
-            // 
-            this.btnPlay.Image = global::FinkiSlots.Properties.Resources.btnPlay;
-            this.btnPlay.Location = new System.Drawing.Point(76, 347);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(214, 72);
-            this.btnPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnPlay.TabIndex = 0;
-            this.btnPlay.TabStop = false;
-            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // btnRules
-            // 
-            this.btnRules.Image = global::FinkiSlots.Properties.Resources.btnRules;
-            this.btnRules.Location = new System.Drawing.Point(347, 347);
-            this.btnRules.Name = "btnRules";
-            this.btnRules.Size = new System.Drawing.Size(214, 72);
-            this.btnRules.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnRules.TabIndex = 1;
-            this.btnRules.TabStop = false;
-            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
-            // 
-            // btnJackpot
-            // 
-            this.btnJackpot.Image = global::FinkiSlots.Properties.Resources.btnJackpot;
-            this.btnJackpot.Location = new System.Drawing.Point(630, 347);
-            this.btnJackpot.Name = "btnJackpot";
-            this.btnJackpot.Size = new System.Drawing.Size(214, 72);
-            this.btnJackpot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnJackpot.TabIndex = 2;
-            this.btnJackpot.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pictureBox1.Image = global::FinkiSlots.Properties.Resources.btnExit;
-            this.pictureBox1.Location = new System.Drawing.Point(864, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(875, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.BackgroundImage = global::FinkiSlots.Properties.Resources.btnPlay;
+            this.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlay.Location = new System.Drawing.Point(68, 347);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(214, 72);
+            this.btnPlay.TabIndex = 4;
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // btnRules
+            // 
+            this.btnRules.BackgroundImage = global::FinkiSlots.Properties.Resources.btnRules;
+            this.btnRules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRules.Location = new System.Drawing.Point(348, 347);
+            this.btnRules.Name = "btnRules";
+            this.btnRules.Size = new System.Drawing.Size(214, 72);
+            this.btnRules.TabIndex = 5;
+            this.btnRules.UseVisualStyleBackColor = true;
+            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
+            // 
+            // btnJackpot
+            // 
+            this.btnJackpot.BackgroundImage = global::FinkiSlots.Properties.Resources.btnJackpot;
+            this.btnJackpot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnJackpot.Location = new System.Drawing.Point(633, 347);
+            this.btnJackpot.Name = "btnJackpot";
+            this.btnJackpot.Size = new System.Drawing.Size(214, 72);
+            this.btnJackpot.TabIndex = 6;
+            this.btnJackpot.UseVisualStyleBackColor = true;
+            this.btnJackpot.Click += new System.EventHandler(this.btnJackpot_Click);
             // 
             // FinkiSlots
             // 
@@ -89,10 +87,10 @@
             this.BackgroundImage = global::FinkiSlots.Properties.Resources.background_main1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 506);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnJackpot);
             this.Controls.Add(this.btnRules);
             this.Controls.Add(this.btnPlay);
+            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(900, 506);
@@ -100,20 +98,16 @@
             this.Name = "FinkiSlots";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "FinkiSlots";
-            ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRules)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnJackpot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox btnPlay;
-        private System.Windows.Forms.PictureBox btnRules;
-        private System.Windows.Forms.PictureBox btnJackpot;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Button btnRules;
+        private System.Windows.Forms.Button btnJackpot;
     }
 }
 

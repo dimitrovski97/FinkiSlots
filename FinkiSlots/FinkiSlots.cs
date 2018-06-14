@@ -34,13 +34,7 @@ namespace FinkiSlots
             }
             base.WndProc(ref m);
         }
-
-        private void btnRules_Click(object sender, EventArgs e)
-        {
-            Rules dialog = new Rules();
-            dialog.ShowDialog(this);
-            dialog.Dispose();
-        }
+        
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
@@ -49,6 +43,18 @@ namespace FinkiSlots
             newGame.ShowDialog(this);
             newGame.Dispose();
             this.Show();
+        }
+
+        private void btnRules_Click(object sender, EventArgs e)
+        {
+            Rules dialog = new Rules();
+            dialog.ShowDialog(this);
+            dialog.Dispose();
+        }
+
+        private void btnJackpot_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
