@@ -196,5 +196,14 @@
   <ItemGroup>
     <None Include="Resources\background_jackpot.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images\btnBet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound\spin_sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound\win_sound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

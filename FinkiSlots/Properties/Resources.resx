@@ -163,6 +163,9 @@
   <data name="finkiSample" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images\finkiSample.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background_jackpot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_jackpot.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="objektno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images\SlotImages\objektno.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,7 +190,13 @@
   <data name="paytable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images\paytable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background_jackpot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_jackpot.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnBet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\btnBet.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spin_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound\spin_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="win_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound\win_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

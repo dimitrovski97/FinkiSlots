@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,6 +23,8 @@ namespace FinkiSlots
         private int bet { get; set; }
         private int timerCounter { get; set; }
         public bool jackPot { get; set; }
+        public SoundPlayer spinSound { get; set; }
+        public SoundPlayer winSound { get; set; }
 
         public GamePlay()
         {
@@ -37,6 +40,8 @@ namespace FinkiSlots
             bet = Convert.ToInt32(numBet.Value);
             timerCounter = 10;
             jackPot = false;
+            spinSound = new SoundPlayer(Properties.Resources.spin_sound);
+            winSound = new SoundPlayer(Properties.Resources.win_sound);
 
         }
 
@@ -74,7 +79,8 @@ namespace FinkiSlots
                 return;
             }
             timerCounter = 10;
-            timer1.Start();        
+            timer1.Start();
+            spinSound.Play();
 
         }
         private void spin(int chance = 0)
@@ -385,6 +391,8 @@ namespace FinkiSlots
             {
                 lastWin = 0;
             }
+            if (lastWin != 0)
+                winSound.Play();
             txtLastWin.Text = lastWin.ToString();
             coefficient = 1;
         }

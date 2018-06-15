@@ -133,6 +133,16 @@ namespace FinkiSlots.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnBet {
+            get {
+                object obj = ResourceManager.GetObject("btnBet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnExit {
             get {
                 object obj = ResourceManager.GetObject("btnExit", resourceCulture);
@@ -261,6 +271,15 @@ namespace FinkiSlots.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream spin_sound {
+            get {
+                return ResourceManager.GetStream("spin_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap strukturno {
@@ -297,6 +316,15 @@ namespace FinkiSlots.Properties {
             get {
                 object obj = ResourceManager.GetObject("vizuelno", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream win_sound {
+            get {
+                return ResourceManager.GetStream("win_sound", resourceCulture);
             }
         }
     }
