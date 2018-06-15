@@ -435,8 +435,8 @@ namespace FinkiSlots
             newCoins.lastBalance = balance;
             if (newCoins.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                balance = newCoins.lastBalance+1;
-                updateBalance();
+                balance = newCoins.lastBalance;
+                txtBalance.Text = balance.ToString();
             }
         }
 
@@ -447,6 +447,15 @@ namespace FinkiSlots
             newCashOut.wonJackpot = jackPot;
             if (newCashOut.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 this.Close();
+        }
+        
+        private void GamePlay_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                e.Handled = true;
+                btnPlay.PerformClick();
+            }
         }
     }
 }

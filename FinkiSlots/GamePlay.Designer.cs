@@ -157,7 +157,7 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.BackgroundImage = global::FinkiSlots.Properties.Resources.btnPlay;
+            this.btnPlay.BackgroundImage = global::FinkiSlots.Properties.Resources.btnBet;
             this.btnPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPlay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPlay.Location = new System.Drawing.Point(732, 409);
@@ -357,6 +357,7 @@
             this.Name = "GamePlay";
             this.Text = "GamePlay";
             this.Load += new System.EventHandler(this.GamePlay_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GamePlay_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
