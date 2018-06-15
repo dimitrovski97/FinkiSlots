@@ -51,11 +51,29 @@
     <Compile Include="FinkiSlots.Designer.cs">
       <DependentUpon>FinkiSlots.cs</DependentUpon>
     </Compile>
+    <Compile Include="CashOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashOut.Designer.cs">
+      <DependentUpon>CashOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="GamePlay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GamePlay.Designer.cs">
       <DependentUpon>GamePlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertCoins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertCoins.Designer.cs">
+      <DependentUpon>InsertCoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jackpot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jackpot.Designer.cs">
+      <DependentUpon>Jackpot.cs</DependentUpon>
     </Compile>
     <Compile Include="Rules.cs">
       <SubType>Form</SubType>
@@ -65,11 +83,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CashOut.resx">
+      <DependentUpon>CashOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinkiSlots.resx">
       <DependentUpon>FinkiSlots.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GamePlay.resx">
       <DependentUpon>GamePlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertCoins.resx">
+      <DependentUpon>InsertCoins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jackpot.resx">
+      <DependentUpon>Jackpot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rules.resx">
       <DependentUpon>Rules.cs</DependentUpon>
@@ -159,6 +186,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images\cash_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_buycredits.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_cashout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_jackpot.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

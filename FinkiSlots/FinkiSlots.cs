@@ -54,7 +54,9 @@ namespace FinkiSlots
 
         private void btnJackpot_Click(object sender, EventArgs e)
         {
-
+            Jackpot dialog = new Jackpot();
+            dialog.ShowDialog(this);
+            dialog.Dispose();
         }
     }
 }
